@@ -8,7 +8,7 @@ Solving Ethernaut CTF with Foundry scripts for on-chain testing.
 - ✅ 4. Telephone
 - ✅ 5. Token
 - ✅ 6. Delegation
-- ❌ 7. Force
+- ✅ 7. Force
 - ❌ 8. Vault
 - ❌ 9. King
 - ❌ 10. Re-Entrancy
