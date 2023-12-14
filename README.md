@@ -1,66 +1,61 @@
-## Foundry
+## Ethernaut CTF solved with Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Solving Ethernaut CTF with Foundry scripts for on-chain testing.
 
-Foundry consists of:
+- ✅ 1. Fallback
+- ❌ 2. Fallout
+- ❌ 3. CoinFlip
+- ❌ 4. Telephone
+- ❌ 5. Token
+- ❌ 6. Delegation
+- ❌ 7. Force
+- ❌ 8. Vault
+- ❌ 9. King
+- ❌ 10. Re-Entrancy
+- ❌ 11. Elevator
+- ❌ 12. Privacy
+- ❌ 13. GatekeeperOne
+- ❌ 14. GatekeeperTwo
+- ❌ 15. NaughtCoin
+- ❌ 16. Preservation
+- ❌ 17. Recovery
+- ❌ 18. Magic Number
+- ❌ 19. AlienCodex
+- ❌ 20. Denial
+- ❌ 21. Shop
+- ❌ 22. Dex
+- ❌ 23. Dex Two
+- ❌ 24. PuzzleWallet
+- ❌ 25. Motorbike
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### How to run
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
+Run local testnet
 
 ```shell
-$ forge build
+anvil
 ```
 
-### Test
+Add Private Key and RPC URL to `test.env` config file
 
 ```shell
-$ forge test
+PRIVATE_KEY=0x00000000000000000000000000000000000000000000000000
+RPC_URL=http://127.0.0.1:8545
 ```
 
-### Format
-
 ```shell
-$ forge fmt
+source test.env
 ```
 
-### Gas Snapshots
+Run forge script for level 1 - Fallback
 
 ```shell
-$ forge snapshot
+forge script --private-key $PRIVATE_KEY --rpc-url $RPC_URL -vvvvv --broadcast --verify src/script/Fallback.s.sol:FallbackScript
 ```
 
-### Anvil
+Example `cast` command to call a function
 
 ```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+cast call $CONTRACT_ADDRESS "getContribution()(uint)" \
+--private-key $PRIVATE_KEY --rpc-url $RPC_URL
 ```
