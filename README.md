@@ -6,7 +6,7 @@ Solving Ethernaut CTF with Foundry scripts for on-chain testing.
 - ❌ 2. Fallout
 - ❌ 3. CoinFlip
 - ✅ 4. Telephone
-- ❌ 5. Token
+- ✅ 5. Token
 - ❌ 6. Delegation
 - ❌ 7. Force
 - ❌ 8. Vault
