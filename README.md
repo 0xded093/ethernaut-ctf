@@ -11,7 +11,7 @@ Solving Ethernaut CTF with Foundry scripts for on-chain testing.
 - ✅ 7. Force
 - ✅ 8. Vault
 - ✅ 9. King
-- ❌ 10. Re-Entrancy
+- ✅ 10. Re-Entrancy
 - ❌ 11. Elevator
 - ❌ 12. Privacy
 - ❌ 13. GatekeeperOne
