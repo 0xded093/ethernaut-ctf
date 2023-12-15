@@ -3,7 +3,7 @@
 Solving Ethernaut CTF with Foundry scripts for on-chain testing.
 
 - ✅ 1. Fallback
-- ❌ 2. Fallout
+- ✅ 2. Fallout
 - ❌ 3. CoinFlip
 - ✅ 4. Telephone
 - ✅ 5. Token
