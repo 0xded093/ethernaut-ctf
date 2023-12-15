@@ -1,14 +1,14 @@
 pragma solidity ^0.8.10;
 
-import {Script, console2} from "forge-std/Script.sol";
-import "../src/Reentrance/ReentranceHack2.sol";
-import "../src/Reentrance/ReentranceFactory.sol";
-import "../src/Ethernaut.sol";
+import { Script, console2 } from 'forge-std/Script.sol';
+import '../src/Reentrance/ReentranceHack.sol';
+import '../src/Reentrance/ReentranceFactory.sol';
+import '../src/Ethernaut.sol';
 
 contract ReentranceScript is Script {
     Ethernaut ethernaut;
 
-    function setUp() public {}
+    function setUp() public { }
 
     function run() public {
         vm.startBroadcast();
@@ -16,12 +16,12 @@ contract ReentranceScript is Script {
         ethernaut = new Ethernaut();
         ReentranceFactory reentranceFactory = new ReentranceFactory();
         ethernaut.registerLevel(reentranceFactory);
-        address levelAddress = ethernaut.createLevelInstance{value: 1 ether}(reentranceFactory);
+        address levelAddress = ethernaut.createLevelInstance{ value: 1 ether }(reentranceFactory);
         Reentrance ethernautReentrance = Reentrance(payable(levelAddress));
 
         ReentranceHack reentranceHack = new ReentranceHack(levelAddress);
         // attack
-        reentranceHack.attack{value: 1 ether}();
+        reentranceHack.attack{ value: 1 ether }();
 
         bool levelSuccessfullyPassed = ethernaut.submitLevelInstance(payable(levelAddress));
         assert(levelSuccessfullyPassed);
